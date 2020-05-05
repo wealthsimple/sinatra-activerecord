@@ -66,5 +66,9 @@ module Sinatra
     end
   end
 
-  register ActiveRecordExtension
+  # disable auto-registering, because of how environment variables
+  # will mess up our environments config with multidb in our sinatra applications
+  # particularly sidekiq with read replicas, but also puma in some cases as well
+  #
+  # register ActiveRecordExtension
 end
