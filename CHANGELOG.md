@@ -1,5 +1,8 @@
 # Changelog
 
+## Version 2.0.27
+Updated to call `ActiveRecord::Base.connection_handler.clear_active_connections!` on Rails 7 and above, as calling `ActiveRecord::Base.connection_handler.clear_active_connections!` is deprecated. Thanks Mr Rogres (@bunnymatic) for contributing to this
+
 ## Version 2.0.26
 Removed unused variables, and removed support for ruby 2.5
 
