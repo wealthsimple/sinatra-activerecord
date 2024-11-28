@@ -57,9 +57,9 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler: '2.4.22'
     
-    # - name : Install dependency
-    #   run: |
-    #     bundle _2.4.22_ install
+    - name : Install dependency
+      run: |
+        gem install appraisal
         
     - name: Run appraisal to install different active records version
       run: |
