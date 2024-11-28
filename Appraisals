@@ -1,7 +1,7 @@
 if RUBY_VERSION >= '2.7.0'
   appraise 'activerecord-7.0' do
     gem 'activerecord', '~> 7.0.0'
-    gem 'sqlite3', '~> 2.0'
+    gem 'sqlite3', '~> 1.4'
   end
 end
 
