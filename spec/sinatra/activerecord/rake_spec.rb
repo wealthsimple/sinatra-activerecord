@@ -40,6 +40,8 @@ RSpec.describe "the rake tasks" do
 
   it "has all the rake tasks working" do
     begin
+      # by default we configure a development database
+      ENV['RAILS_ENV'] = 'development'
       ENV["NAME"] = "create_users"
 
       Rake::Task["db:create"].invoke
