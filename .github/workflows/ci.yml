@@ -77,6 +77,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler: '2.4.22'
+      env:
+        BUNDLE_REPOSERVER__W10EXTERNAL__COM: ${{ secrets.BUNDLE_REPOSERVER__W10EXTERNAL__COM }}
     
     - name : Install dependency
       run: |

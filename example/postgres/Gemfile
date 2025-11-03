@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'https://reposerver.w10external.com/repository/gems'
 
 gem 'pg'
 gem 'rake'
