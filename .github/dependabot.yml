@@ -4,6 +4,7 @@ updates:
     registries:
       - rubygems-public-reposerver
       - rubygems-internal-reposerver
+      - rubygems-sidekiq-reposerver
     directory: '/'
     schedule:
       interval: 'weekly'
@@ -32,6 +33,7 @@ updates:
     registries:
       - rubygems-public-reposerver
       - rubygems-internal-reposerver
+      - rubygems-sidekiq-reposerver
     directory: '/example/postgres'
     schedule:
       interval: 'weekly'
@@ -60,6 +62,7 @@ updates:
     registries:
       - rubygems-public-reposerver
       - rubygems-internal-reposerver
+      - rubygems-sidekiq-reposerver
     directory: '/example/sqlite'
     schedule:
       interval: 'weekly'
@@ -93,5 +96,10 @@ registries:
   rubygems-internal-reposerver:
     type: rubygems-server
     url: https://reposerver.w10external.com/repository/gems-internal
+    username: ${{ secrets.REPOSERVER_CI_READ_USERNAME }}
+    password: ${{ secrets.REPOSERVER_CI_READ_PASSWORD }}
+  rubygems-sidekiq-reposerver:
+    type: rubygems-server
+    url: https://reposerver.w10external.com/repository/gems-sidekiq
     username: ${{ secrets.REPOSERVER_CI_READ_USERNAME }}
     password: ${{ secrets.REPOSERVER_CI_READ_PASSWORD }}
