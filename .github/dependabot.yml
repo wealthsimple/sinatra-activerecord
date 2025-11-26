@@ -1,92 +1,4 @@
 version: 2
-updates:
-  - package-ecosystem: bundler
-    registries:
-      - rubygems-public-reposerver
-      - rubygems-internal-reposerver
-      - rubygems-sidekiq-reposerver
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-    cooldown:
-      default-days: 6
-      semver-major-days: 6
-      semver-minor-days: 6
-      semver-patch-days: 6
-    pull-request-branch-name:
-      separator: '-'
-    open-pull-requests-limit: 10
-    rebase-strategy: disabled
-    groups:
-      development-dependencies:
-        dependency-type: 'development'
-        update-types:
-          - 'patch'
-          - 'minor'
-          - 'major'
-      production-dependencies:
-        dependency-type: 'production'
-        update-types:
-          - 'patch'
-          - 'minor'
-  - package-ecosystem: bundler
-    registries:
-      - rubygems-public-reposerver
-      - rubygems-internal-reposerver
-      - rubygems-sidekiq-reposerver
-    directory: '/example/postgres'
-    schedule:
-      interval: 'weekly'
-    cooldown:
-      default-days: 6
-      semver-major-days: 6
-      semver-minor-days: 6
-      semver-patch-days: 6
-    pull-request-branch-name:
-      separator: '-'
-    open-pull-requests-limit: 10
-    rebase-strategy: disabled
-    groups:
-      development-dependencies:
-        dependency-type: 'development'
-        update-types:
-          - 'patch'
-          - 'minor'
-          - 'major'
-      production-dependencies:
-        dependency-type: 'production'
-        update-types:
-          - 'patch'
-          - 'minor'
-  - package-ecosystem: bundler
-    registries:
-      - rubygems-public-reposerver
-      - rubygems-internal-reposerver
-      - rubygems-sidekiq-reposerver
-    directory: '/example/sqlite'
-    schedule:
-      interval: 'weekly'
-    cooldown:
-      default-days: 6
-      semver-major-days: 6
-      semver-minor-days: 6
-      semver-patch-days: 6
-    pull-request-branch-name:
-      separator: '-'
-    open-pull-requests-limit: 10
-    rebase-strategy: disabled
-    groups:
-      development-dependencies:
-        dependency-type: 'development'
-        update-types:
-          - 'patch'
-          - 'minor'
-          - 'major'
-      production-dependencies:
-        dependency-type: 'production'
-        update-types:
-          - 'patch'
-          - 'minor'
 registries:
   rubygems-public-reposerver:
     type: rubygems-server
@@ -103,3 +15,37 @@ registries:
     url: https://reposerver.w10external.com/repository/gems-sidekiq
     username: ${{ secrets.REPOSERVER_CI_READ_USERNAME }}
     password: ${{ secrets.REPOSERVER_CI_READ_PASSWORD }}
+updates:
+  - package-ecosystem: bundler
+    registries:
+      - rubygems-public-reposerver
+      - rubygems-internal-reposerver
+      - rubygems-sidekiq-reposerver
+    schedule:
+      interval: 'weekly'
+    cooldown:
+      default-days: 6
+      semver-major-days: 6
+      semver-minor-days: 6
+      semver-patch-days: 6
+    pull-request-branch-name:
+      separator: '-'
+    open-pull-requests-limit: 10
+    rebase-strategy: disabled
+    groups:
+      development-dependencies:
+        dependency-type: 'development'
+        update-types:
+          - 'patch'
+          - 'minor'
+          - 'major'
+      production-dependencies:
+        dependency-type: 'production'
+        update-types:
+          - 'patch'
+          - 'minor'
+    directories:
+      - '/example/sqlite'
+      - '/example/postgres'
+      - '/'
+    insecure-external-code-execution: allow
