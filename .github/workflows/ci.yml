@@ -73,7 +73,7 @@ jobs:
         sudo apt-get install libsqlite3-dev
 
     - name: Setup Ruby
-      uses: ruby/setup-ruby@c4e5b1316158f92e3d49443a9d58b31d25ac0f8f # v1.306.0
+      uses: chainguard-actions/ruby-setup-ruby@ac1e742532b69c4dd7bd406d6257f4ea94aef5f7 # v1.327.0
       with:
         ruby-version: ${{ matrix.ruby }}
         bundler: '2.4.22'
