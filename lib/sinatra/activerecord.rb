@@ -1,8 +1,8 @@
+require 'logger'
 require 'sinatra/base'
 require 'active_record'
 require 'active_support/core_ext/hash/keys'
 
-require 'logger'
 require 'pathname'
 require 'yaml'
 require 'erb'
